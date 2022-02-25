@@ -9,23 +9,23 @@ fn main() {
 
     const SECONDS_PER_DAY_F64: f64 = 24.0 * 60.0 * 60.0;
 
-    let mut earth = Planet {
+    let mut planets: Vec<Planet> = Vec::new();
+
+    let mut planet = Planet {
         name: "Earth".to_string(),
         distance: 149_598_023_000.0, // greater than the astronomical unit
         period: 365.256_363_004 * SECONDS_PER_DAY_F64,
         mean_anomaly: 0.0
     };
+    planets.push(planet);
 
-    let mut mars = Planet {
+    planet = Planet {
         name: "Mars".to_string(),
         distance: 227_939_200_000.0,
         period: 686.98 * SECONDS_PER_DAY_F64,
         mean_anomaly: 0.0
     };
-
-    let mut planets: Vec<Planet> = Vec::new();
-    planets.push(earth);
-    planets.push(mars);
+    planets.push(planet);
 
     for time in 1..17 {
         for planet in &mut planets {
