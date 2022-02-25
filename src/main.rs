@@ -23,7 +23,9 @@ fn main() {
         mean_anomaly: 0.0
     };
 
-    let mut planets = vec![earth, mars];
+    let mut planets: Vec<Planet> = Vec::new();
+    planets.push(earth);
+    planets.push(mars);
 
     for time in 1..17 {
         for planet in &mut planets {
