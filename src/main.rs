@@ -1,3 +1,5 @@
+use std::thread;
+
 fn main() {
     println!("Space, the final frontier");
     struct Planet {
@@ -27,10 +29,13 @@ fn main() {
     };
     planets.push(planet);
 
-    for time in 1..17 {
-        for planet in &mut planets {
-            planet.mean_anomaly += 0.0625;
+    let handle = thread::spawn(move || {
+        for time in 1..17 {
+            for planet in &mut planets {
+                planet.mean_anomaly += 0.0625;
+            }
+            println!("{} {}", planets[0].mean_anomaly, planets[1].mean_anomaly);
         }
-        println!("{} {}", planets[0].mean_anomaly, planets[1].mean_anomaly);
-    }
+	});
+	handle.join().unwrap();
 }
