@@ -12,7 +12,7 @@ fn main() {
 
     const SECONDS_PER_DAY_F64: f64 = 24.0 * 60.0 * 60.0;
 
-    let mut planets: Vec<Planet> = Vec::new();
+    let mut planets: Vec<Planet> = vec![];
 
     let mut planet = Planet {
         name: "Earth".to_string(),
@@ -29,19 +29,30 @@ fn main() {
         mean_anomaly: 0.0
     };
     planets.push(planet);
+    println!("{} {}", planets[0].name, planets[1].name);
 
+    let mut handles = vec![];
     let planets = Arc::new(Mutex::new(planets));
-    let planets_clone = Arc::clone(&planets);
-    let handle = thread::spawn(move || {
-        for _ in 0..16 {
-            let mut planets = planets_clone.lock().unwrap();
-            for planet in &mut (*planets) {
-                planet.mean_anomaly += 0.0625;
+
+    for thread_number in 0..2 {
+        let planets_clone = Arc::clone(&planets);
+        let handle = thread::spawn(move || {
+            for _ in 0..256 {
+                {
+                    let mut planets = planets_clone.lock().unwrap();
+                    for planet in &mut (*planets) {
+                        planet.mean_anomaly += 0.0625;
+                    }
+                    println!("{} {} {}", thread_number, planets[0].mean_anomaly, planets[1].mean_anomaly);
+                }
             }
-            println!("{} {}", planets[0].mean_anomaly, planets[1].mean_anomaly);
-        }
-	});
-	handle.join().unwrap();
+        });
+        handles.push(handle);
+    }
+
+    for handle in handles {
+        handle.join().unwrap();
+    }
 
     let planets = planets.lock().unwrap();
     println!("{} {}", planets[0].mean_anomaly, planets[1].mean_anomaly);
