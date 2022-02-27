@@ -1,3 +1,4 @@
+use std::sync::{Arc, Mutex};
 use std::thread;
 
 fn main() {
@@ -29,13 +30,19 @@ fn main() {
     };
     planets.push(planet);
 
+    let planets = Arc::new(Mutex::new(planets));
+    let planets_clone = Arc::clone(&planets);
     let handle = thread::spawn(move || {
-        for time in 1..17 {
-            for planet in &mut planets {
+        for _ in 0..16 {
+            let mut planets = planets_clone.lock().unwrap();
+            for planet in &mut (*planets) {
                 planet.mean_anomaly += 0.0625;
             }
             println!("{} {}", planets[0].mean_anomaly, planets[1].mean_anomaly);
         }
 	});
 	handle.join().unwrap();
+
+    let planets = planets.lock().unwrap();
+    println!("{} {}", planets[0].mean_anomaly, planets[1].mean_anomaly);
 }
