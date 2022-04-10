@@ -12,7 +12,7 @@ fn main() {
 
     const SECONDS_PER_DAY_F64: f64 = 24.0 * 60.0 * 60.0;
 
-    let mut planets: Vec<Planet> = vec![];
+    let mut planets: Vec<Arc<Mutex<Planet>>> = vec![];
 
     let mut planet = Planet {
         name: "Earth".to_string(),
@@ -20,7 +20,7 @@ fn main() {
         period: 365.256_363_004 * SECONDS_PER_DAY_F64,
         mean_anomaly: 0.0
     };
-    planets.push(planet);
+    planets.push(Arc::new(Mutex::new(planet)));
 
     planet = Planet {
         name: "Mars".to_string(),
@@ -28,23 +28,17 @@ fn main() {
         period: 686.98 * SECONDS_PER_DAY_F64,
         mean_anomaly: 0.0
     };
-    planets.push(planet);
-    println!("{} {}", planets[0].name, planets[1].name);
+    planets.push(Arc::new(Mutex::new(planet)));
 
     let mut handles = vec![];
-    let planets = Arc::new(Mutex::new(planets));
 
-    for thread_number in 0..2 {
-        let planets_clone = Arc::clone(&planets);
+    for planet_arc_mutex in planets.iter() {
+        let planet_mutex_clone = planet_arc_mutex.clone();
         let handle = thread::spawn(move || {
-            for _ in 0..256 {
-                {
-                    let mut planets = planets_clone.lock().unwrap();
-                    for planet in &mut (*planets) {
-                        planet.mean_anomaly += 0.0625;
-                    }
-                    println!("{} {} {}", thread_number, planets[0].mean_anomaly, planets[1].mean_anomaly);
-                }
+            let mut planet = planet_mutex_clone.lock().unwrap();
+            for _ in 0..16 {
+                planet.mean_anomaly += 0.0625;
+                println!("{} {}", planet.name, planet.mean_anomaly);
             }
         });
         handles.push(handle);
@@ -54,6 +48,8 @@ fn main() {
         handle.join().unwrap();
     }
 
-    let planets = planets.lock().unwrap();
-    println!("{} {}", planets[0].mean_anomaly, planets[1].mean_anomaly);
+    for planet_arc_mutex in planets.iter() {
+        let planet = planet_arc_mutex.lock().unwrap();
+        println!("{}", planet.name);
+    }
 }
