@@ -13,7 +13,13 @@ If you want to explore space virtually, then you can do so immediately with othe
 
 There are four known fundamental forces.
 
-- Gravity
+- Gravity keeps things together at the large scale.
 - Electromagnetism
 - Strong force
 - Weak force
+
+## Gravity
+
+brings things together across vast distances and at great densities.
+
+There is no repulsion. There is only attraction.
