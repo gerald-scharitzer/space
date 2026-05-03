@@ -23,3 +23,9 @@ There are four known fundamental forces.
 brings things together across vast distances and at great densities.
 
 There is no repulsion. There is only attraction.
+
+The reason that we stand and sit here without floating into space, is gravity.
+It formed the planets and the Sun.
+The planet Earth we stand on.
+Earth's gravity keeps the atmosphere here on Earth.
+The air that we breathe.
