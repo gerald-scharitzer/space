@@ -36,4 +36,9 @@ The star that empowers our biosphere.
 
 forms things by attracting opposite charges and repulsing same charges.
 
+Protons and electrons attract each other.
+Protons repulse each other.
+Electrons repulse each other.
+This forms atoms and molecules.
+
 Moving through spacetime they create an electromagnetic field.
