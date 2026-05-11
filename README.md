@@ -8,19 +8,23 @@ If you want to explore space virtually, then you can do so immediately with othe
 
 1. Calculate orbits
 2. Visualize stars
+3. Include the Standard Model
+4. Tell a story
 
 # Standard Model
 
 There are four known fundamental forces.
 
 - Gravity keeps things together at the large scale.
-- Electromagnetism keeps things together at the small scale.
-- Strong force
+- Electromagnetism keeps things together at the medium scale.
+- The Strong Force keeps things together at the small scale.
 - Weak force
 
 ## Gravity
 
 brings things together across vast distances and at great densities.
+
+It links moons, planets, stars, galaxies, and more.
 
 There is no repulsion. There is only attraction.
 
@@ -31,6 +35,7 @@ Earth's gravity keeps the atmosphere here on Earth.
 The air that we breathe.
 Gravity ignited the Sun.
 The star that empowers our biosphere.
+Gravity forged the iron in our blood in the supernovae of the ancestral stars.
 
 ## Electromagnetism
 
