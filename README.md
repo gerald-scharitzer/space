@@ -17,8 +17,8 @@ There are four known fundamental forces.
 
 - Gravity keeps things together at the large scale.
 - Electromagnetism keeps things together at the medium scale.
-- The Strong Force keeps things together at the small scale.
-- Weak force
+- The Strong Interaction keeps things together at the small scale.
+- The Weak Interaction
 
 ## Gravity
 
@@ -47,3 +47,18 @@ Electrons repulse each other.
 This forms atoms and molecules.
 
 Moving through spacetime they create an electromagnetic field.
+
+## Weak Interaction
+
+or Strong Force or Strong Nuclear Force keeps protons and neutrons together and with each other.
+
+This it keeps atomic nuclei together.
+
+This determines the chemical element through the number of protons.
+
+This forms the chemical elements that constitute the human body and the planet Earth.
+
+Nuclear fusion brings protons together and forms different elements,
+plus it converts some mass to energy.
+
+This energy is the light of the Sun.
