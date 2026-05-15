@@ -48,7 +48,7 @@ This forms atoms and molecules.
 
 Moving through spacetime they create an electromagnetic field.
 
-## Weak Interaction
+## Strong Interaction
 
 or Strong Force or Strong Nuclear Force keeps protons and neutrons together and with each other.
 
@@ -62,3 +62,6 @@ Nuclear fusion brings protons together and forms different elements,
 plus it converts some mass to energy.
 
 This energy is the light of the Sun.
+
+# Weak Interaction
+
