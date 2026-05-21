@@ -65,3 +65,6 @@ This energy is the light of the Sun.
 
 # Weak Interaction
 
+enables the fusion of hydrogen to helium in stars.
+
+This powers our Sun.
