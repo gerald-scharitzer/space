@@ -29,13 +29,28 @@ It links moons, planets, stars, galaxies, and more.
 There is no repulsion. There is only attraction.
 
 The reason that we stand and sit here without floating into space, is gravity.
+
 It formed the planets and the Sun.
 The planet Earth we stand on.
+
 Earth's gravity keeps the atmosphere here on Earth.
 The air that we breathe.
+
 Gravity ignited the Sun.
 The star that empowers our biosphere.
+
+Gravity keeps our planet in orbit around the Sun and in its habitable zone,
+so the water in our bodies stays liquid and does not freeze solid or vaporize to steam.
+
 Gravity forged the iron in our blood in the supernovae of the ancestral stars.
+
+Gravity created the stars.
+It collected and compressed gas clouds, until the stars ignited and started fusing the gas to heavier elements.
+This ends at the latest with the fusion into iron, because fusing into something heavier than iron absorbs energy instead of emitting it.
+This energy is delivered by the supernovae.
+
+Gravity caused the supernovae.
+These violent explosions of entire stars fuse elements beyond iron and cast them out into space.
 
 ## Electromagnetism
 
